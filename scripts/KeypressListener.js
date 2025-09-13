@@ -9,6 +9,7 @@ class KeypressListener {
                 }
             }
         };
+        
         this.keyupFunction = function(event) {
             if (event.code === keyCode) {
                 keySafe = true;

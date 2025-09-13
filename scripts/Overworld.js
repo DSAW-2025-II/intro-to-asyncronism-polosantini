@@ -44,11 +44,25 @@ class Overworld {
         })
     }
 
-    init() {
-        this.map = new OverworldMap(window.OverworldMaps.MapaPrincipal);
+    bindAshPositionCheck() {
+        document.addEventListener("PersonWalkingComplete", e => {
+            if (e.detail.whoId === "ash") {
+                this.map.checkForFootstepCutscene()
+            }
+        })
+    }
+
+    startMap(mapConfig) {
+        this.map = new OverworldMap(mapConfig);
+        this.map.overworld = this;
         this.map.mountObjects();
+    }
+
+    init() {
+        this.startMap(window.OverworldMaps.MapaPrincipal);
         
         this.bindActionInput();
+        this.bindAshPositionCheck();
 
         this.directionInput = new DirectionInput();
         this.directionInput.init();
@@ -67,16 +81,19 @@ class Overworld {
             {who: "npcA", type: "walk", direction: "left"},
             {who: "npcA", type: "walk", direction: "left"},
             {type: "textMessage", text: "Bienvenido a esta Pokédex"},
-            {type: "textMessage", text: "No te molestes en saber mi nombre, los nombres son solo para amigos"},
-            {type: "textMessage", text: "Dentro de este mapa principal encontrarás varios portales"},
-            {type: "textMessage", text: "Cada uno se refiere a un tipo de Pokémon diferente"},
-            {type: "textMessage", text: "Dentro de cada uno te transportarás a un mapa diferente"},
-            {type: "textMessage", text: "En cada mapa encontrarás un fanático de ese tipo de Pokémon"},
-            {type: "textMessage", text: "Ellos te enseñarán sobre ese tipo"},
-            {type: "textMessage", text: "Ten cuidado"},
+            {type: "textMessage", text: "No te molestes en saber mi nombre, los nombres son solo para amigos", faceHero: "npcA"},
+            {type: "textMessage", text: "Dentro de este mapa principal encontrarás varios portales", faceHero: "npcA"},
+            {type: "textMessage", text: "Cada uno se refiere a un tipo de Pokémon diferente", faceHero: "npcA"},
+            {type: "textMessage", text: "Dentro de cada uno te transportarás a un mapa diferente", faceHero: "npcA"},
+            {type: "textMessage", text: "En cada mapa encontrarás un fanático de ese tipo de Pokémon", faceHero: "npcA"},
+            {type: "textMessage", text: "Ellos te enseñarán sobre ese tipo", faceHero: "npcA"},
+            {type: "textMessage", text: "Si quieres salir de ese mapa, dirígete hacia el punto inferior del mismo", faceHero: "npcA"},
+            {type: "textMessage", text: "Volverás acá"},
+            {type: "textMessage", text: "Ten cuidado", faceHero: "npcA"},
             {who: "npcA", type: "stand", direction: "left", time: 800},
         ])
 
     }
+
 
 }

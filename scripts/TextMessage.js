@@ -33,6 +33,5 @@ class TextMessage {
     init(container) {
         this.createElement();
         container.appendChild(this.element);
-        console.log("TextMessage component added to the DOM");
     }
 }
