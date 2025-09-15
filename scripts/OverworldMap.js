@@ -445,78 +445,159 @@ window.OverworldMaps = {
     },
 
     MapaFighting: createMap("fighting", [
-        { type: "textMessage", text: "¡El tipo Lucha es fuerte contra Normal, Hielo, Roca!", faceHero: `fanaticFighting` }
+        { type: "textMessage", text: "¿Quién rayos eres y porque has venido acá?", faceHero: `fanaticFighting` },
+        { type: "textMessage", text: "No se si sabías, pero el 98% de los problemas se resuelven a traques", faceHero: `fanaticFighting` },
+        { type: "textMessage", text: "Por desgracia ocupas el 97%", faceHero: `fanaticFighting` },
+        { type: "textMessage", text: "A menos que quieras echarle una revisada a mi conocimiento", faceHero: `fanaticFighting` },
+        { type: "textMessage", text: "Mira mis Pokemones de lucha, y vete", faceHero: `fanaticFighting` },
+        { type: "dictionary", typeName: "fighting" },
     ]),
 
     MapaFlying: createMap("flying", [
-        { type: "textMessage", text: "¡El tipo Volador es efectivo contra Lucha, Bicho, Planta!", faceHero: "fanaticFlying" }
+        { type: "textMessage", text: "¡Ahhh! Otro ser terrenal atascado en la gravedad...", faceHero: "fanaticFlying" },
+        { type: "textMessage", text: "No me hables si no sabes diferenciar un Pidgeot de un Swellow.", faceHero: "fanaticFlying" },
+        { type: "textMessage", text: "Los tipo Volador están por encima... literalmente.", faceHero: "fanaticFlying" },
+        { type: "textMessage", text: "Yo no, ya que no nací con alas. Aun así estoy por encima de ti", faceHero: "fanaticFlying" },
+        { type: "textMessage", text: "Observa mis Pokemones del cielo y sueña con estar a nuestra altura.", faceHero: "fanaticFlying" },
+        { type: "dictionary", typeName: "flying" },
     ]),
 
     MapaPoison: createMap("poison", [
-        { type: "textMessage", text: "¡El tipo Veneno es fuerte contra Hada, Planta!", faceHero: "fanaticPoison" }
+        { type: "textMessage", text: "El veneno se queda corto cuando se compara con tu suspiración", faceHero: "fanaticPoison" },
+        { type: "textMessage", text: "Solo no te acerques mucho, o te enveneno", faceHero: "fanaticPoison" },
+        { type: "textMessage", text: "Mira mis Pokemones tipo poison, solo dime si puedes sobrevivir a esta experiencia", faceHero: "fanaticPoison" },
+        { type: "dictionary", typeName: "poison" }
     ]),
 
     MapaGround: createMap("ground", [
-        { type: "textMessage", text: "¡El tipo Tierra es efectivo contra Eléctrico, Fuego, Veneno, Roca, Acero!", faceHero: "fanaticGround" }
+        { type: "textMessage", text: "Escucha a la tierra, y le dirá a tus pies hacia donde caminar", faceHero: "fanaticGround" },
+        { type: "textMessage", text: "Los truenos callan cuando el suelo ruge", faceHero: "fanaticGround" },
+        { type: "textMessage", text: "La tierra hace que los débiles no soporten su propio peso", faceHero: "fanaticGround" },
+        { type: "textMessage", text: "Mira mis Pokemones tipo ground, y recuerda que aquello que sale del suelo vuelve a él", faceHero: "fanaticGround" },
+        { type: "dictionary", typeName: "ground" }
     ]),
 
     MapaRock: createMap("rock", [
-        { type: "textMessage", text: "¡El tipo Roca es fuerte contra Bicho, Fuego, Hielo, Volador!", faceHero: "fanaticRock" }
+    { type: "textMessage", text: "El tiempo crea las rocas, las hace fuertes", faceHero: "fanaticRock" },
+    { type: "textMessage", text: "La vida es de soportar y ganar", faceHero: "fanaticRock" },
+    { type: "textMessage", text: "Todo a su tiempo, la velocidad es para aquellos que no soportan el éxito", faceHero: "fanaticRock" },
+    { type: "textMessage", text: "Admira a mis Pokemones tipo rock", faceHero: "fanaticRock" },
+    { type: "dictionary", typeName: "rock" }
     ]),
 
     MapaBug: createMap("bug", [
-        { type: "textMessage", text: "¡El tipo Bicho es efectivo contra Planta, Psíquico, Siniestro!", faceHero: "fanaticBug" }
+        { type: "textMessage", text: "Gaaaaawwwwwwhhhhhhh", faceHero: "fanaticBug" },
+        { type: "textMessage", text: "¡Por fín! Alguien me visita.", faceHero: "fanaticBug" },
+        { type: "textMessage", text: "¿Te gustan los bichos? A mi también", faceHero: "fanaticBug" },
+        { type: "textMessage", text: "Nos subestiman, pero ¡los Pokemones bicho tienen mas poder del que la gente cree!", faceHero: "fanaticBug" },
+        { type: "textMessage", text: "Mira mis Pokemones tipo bug, no seas repelente (xD)", faceHero: "fanaticBug" },
+        { type: "dictionary", typeName: "bug" }
     ]),
 
     MapaGhost: createMap("ghost", [
-        { type: "textMessage", text: "¡El tipo Fantasma es fuerte contra Fantasma, Psíquico!", faceHero: "fanaticGhost" }
+        { type: "textMessage", text: "....", faceHero: "fanaticGhost" },
+        { type: "textMessage", text: "........", faceHero: "fanaticGhost" },
+        { type: "textMessage", text: "Tu alma huyendo es mi alimento, ¿no sientes este escalofrío?", faceHero: "fanaticGhost" },
+        { type: "textMessage", text: "Mira mis Pokemones tipo ghost. A ver si encuentras una nueva alma", faceHero: "fanaticGhost" },
+        { type: "dictionary", typeName: "ghost" }
     ]),
 
     MapaSteel: createMap("steel", [
-        { type: "textMessage", text: "¡El tipo Acero es efectivo contra Hada, Hielo, Roca!", faceHero: "fanaticSteel" }
+        { type: "textMessage", text: "¿Sentir? ¿Qué clase de integral es esa?", faceHero: "fanaticSteel" },
+        { type: "textMessage", text: "El acero es la máxima de la eficiencia", faceHero: "fanaticSteel" },
+        { type: "textMessage", text: "La debilidad es una variable eliminada. La convertí en una constante y la derivé", faceHero: "fanaticSteel" },
+        { type: "textMessage", text: "Mira mis Pokemon tipo steel. Solo verás frialdad y precisión", faceHero: "fanaticSteel" },
+        { type: "dictionary", typeName: "steel" }
     ]),
 
     MapaFire: createMap("fire", [
-        { type: "textMessage", text: "¡El tipo Fuego es fuerte contra Acero, Bicho, Hielo, Planta!", faceHero: "fanaticFire" }
+        { type: "textMessage", text: "UFFFFFFF, alguien está que arde", faceHero: "fanaticFire" },
+        { type: "textMessage", text: "¡Por supuesto que soy yo! ¿Qué pensabas?", faceHero: "fanaticFire" },
+        { type: "textMessage", text: "Si no sientes el calor, eres un pechofrío", faceHero: "fanaticFire" },
+        { type: "textMessage", text: "Como esos troncos de la Selección Colombia", faceHero: "fanaticFire" },
+        { type: "textMessage", text: "Mira mis Pokemones tipo fire, pero sin miedo", faceHero: "fanaticFire" },
+        { type: "textMessage", text: "El que se asusta se quema xD", faceHero: "fanaticFire" },
+        { type: "dictionary", typeName: "fire" }
     ]),
 
     MapaWater: createMap("water", [
-        { type: "textMessage", text: "¡El tipo Agua es efectivo contra Fuego, Tierra, Roca!", faceHero: "fanaticWater" }
+        { type: "textMessage", text: "El agua calma o arrasa", faceHero: "fanaticWater" },
+        { type: "textMessage", text: "Todo depende de quien la controle", faceHero: "fanaticWater" },
+        { type: "textMessage", text: "Pero fluye.... o no.....", faceHero: "fanaticWater" },
+        { type: "textMessage", text: "Sumérgete en mi conocimiento sobre Pokemones tipo water. Solo no te ahogues", faceHero: "fanaticWater" },
+        { type: "dictionary", typeName: "water" }
     ]),
 
     MapaGrass: createMap("grass", [
-        { type: "textMessage", text: "¡El tipo Planta es fuerte contra Agua, Roca, Tierra!", faceHero: "fanaticGrass" }
+        { type: "textMessage", text: "La naturaleza es sabia y yo soy su reflejo", faceHero: "fanaticGrass" },
+        { type: "textMessage", text: "Nunca subestimes el poder de las plantas", faceHero: "fanaticGrass" },
+        { type: "textMessage", text: "Siembra bien, y cosecharás el éxito", faceHero: "fanaticGrass" },
+        { type: "textMessage", text: "Mis Pokemon tipo grass son fuertes como los robles", faceHero: "fanaticGrass" },
+        { type: "dictionary", typeName: "grass" }
     ]),
 
     MapaElectric: createMap("electric", [
-        { type: "textMessage", text: "¡El tipo Eléctrico es efectivo contra Agua, Volador!", faceHero: "fanaticElectric" }
+        { type: "textMessage", text: "eeeeEEEEEEllllleeeCCCTTTRIIIIIIciiiiiTTYYYYYY", faceHero: "fanaticElectric" },
+        { type: "textMessage", text: "La rapidez de la batalla depende de la intensidad de su chispa", faceHero: "fanaticElectric" },
+        { type: "textMessage", text: "Ni Tesla dominaba tan bien la electricidad como yo lo hago", faceHero: "fanaticElectric" },
+        { type: "textMessage", text: "Conoce mis Pokemones tipo electric, y llevate una descarga de conocimiento", faceHero: "fanaticElectric" },
+        { type: "dictionary", typeName: "electric" }
     ]),
 
     MapaPsychic: createMap("psychic", [
-        { type: "textMessage", text: "¡El tipo Psíquico es fuerte contra Lucha, Veneno!", faceHero: "fanaticPsychic" }
+        { type: "textMessage", text: "Mi campo de batalla es la mente", faceHero: "fanaticPsychic" },
+        { type: "textMessage", text: "Si no la dominas, nunca ganarás", faceHero: "fanaticPsychic" },
+        { type: "textMessage", text: "Mi tipo puede ver más allá de lo visible", faceHero: "fanaticPsychic" },
+        { type: "textMessage", text: "El poder psíquico es puro", faceHero: "fanaticPsychic" },
+        { type: "textMessage", text: "Conoce mis Pokemones tipo psychic", faceHero: "fanaticPsychic" },
+        { type: "dictionary", typeName: "psychic" }
     ]),
 
     MapaIce: createMap("ice", [
-        { type: "textMessage", text: "¡El tipo Hielo es efectivo contra Dragón, Planta, Tierra, Volador!", faceHero: "fanaticIce" }
+        { type: "textMessage", text: "El frío está mas presente que el calor", faceHero: "fanaticIce" },
+        { type: "textMessage", text: "Por algo la gente lo prefiere", faceHero: "fanaticIce" },
+        { type: "textMessage", text: "¿Sientes frío? Ese soy yo", faceHero: "fanaticIce" },
+        { type: "textMessage", text: "Mis Pokemon tipo ice no solo congelan, sino dominan", faceHero: "fanaticIce" },
+        { type: "dictionary", typeName: "ice" }
     ]),
 
     MapaDragon: createMap("dragon", [
-        { type: "textMessage", text: "¡El tipo Dragón es fuerte contra Dragón!", faceHero: "fanaticDragon" }
+        { type: "textMessage", text: "¡Sólo los más fuertes merecen enfrentarse a los dragones!", faceHero: "fanaticDragon" },
+        { type: "textMessage", text: "Los dragones no perdonan ni olvidan", faceHero: "fanaticDragon" },
+        { type: "textMessage", text: "Respétanos o arde en el fuego de nuestra ira", faceHero: "fanaticDragon" },
+        { type: "textMessage", text: "Mis Pokemones tipo dragon huelen el miedo, conócelos", faceHero: "fanaticDragon" },
+        { type: "dictionary", typeName: "dragon" }
     ]),
 
     MapaDark: createMap("dark", [
-        { type: "textMessage", text: "¡El tipo Siniestro es efectivo contra Fantasma, Psíquico!", faceHero: "fanaticDark" }
+        { type: "textMessage", text: "La oscuridad es poder, y yo soy su amo", faceHero: "fanaticDark" },
+        { type: "textMessage", text: "La noche es nuestra casa, incluso el día alberga oscuridad", faceHero: "fanaticDark" },
+        { type: "textMessage", text: "No hay luz para los débiles, solo existen las sombras", faceHero: "fanaticDark" },
+        { type: "textMessage", text: "Mis Pokemones tipo dark te nublarán la vista, o te la abrirán", faceHero: "fanaticDark" },
+        { type: "dictionary", typeName: "dark" }
     ]),
 
     MapaFairy: createMap("fairy", [
-        { type: "textMessage", text: "¡El tipo Hada es fuerte contra Dragón, Lucha, Siniestro!", faceHero: "fanaticFairy" }
+        { type: "textMessage", text: "¡Oh! Que alegría verte aquí, querido visitante", faceHero: "fanaticFairy" },
+        { type: "textMessage", text: "Solo un corazón puro entiende el poder de nosotros", faceHero: "fanaticFairy" },
+        { type: "textMessage", text: "No nos desafíes o te enfrentarás a un encantamiento eterno", faceHero: "fanaticFairy" },
+        { type: "textMessage", text: "¡Brilla con nosotros y deja que mis Pokemones tipo fairy te envuelvan con su magia!", faceHero: "fanaticFairy" },
+        { type: "textMessage", text: "(A Martín le dió un espasmo programando este diálogo)", faceHero: "fanaticFairy" },
+        { type: "dictionary", typeName: "fairy" }
     ]),
 
     MapaNormal: createMap("normal", [
-        { type: "textMessage", text: "¡El tipo Normal no es muy efectivo contra otros tipos, pero tiene amplia cobertura!", faceHero: "fanaticNormal" }
-    ]),
-
-    
+        { type: "textMessage", text: "No soy especial, pero no soy debil tampoco", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "La normalidad es la base de todo", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "Por algo existe la distribución normal, no la distribución electric", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "Uffff, ¡y la t-Student!", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "Y la Chi-cuadrado", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "y la gamma....", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "y el Teorema Central del Límite....", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "Agh, soy tan simple que no puede alardear de nada, solo hablo de estadística como un NPC", faceHero: "fanaticNormal" },
+        { type: "textMessage", text: "Emmmmm.... Mis Pokemones tipo normal son el reflejo de que la simpleza no es el sinónimo de facilidad", faceHero: "fanaticNormal" },
+        { type: "dictionary", typeName: "normal" }
+    ]), 
 }
 
 function createMap(entrada, eventos) {
