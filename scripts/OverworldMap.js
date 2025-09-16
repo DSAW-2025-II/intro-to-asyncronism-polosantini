@@ -109,6 +109,32 @@ window.OverworldMaps = {
                 ],
 
             }),
+            npcB: new Person({
+                x: utils.withGrid(23),
+                y: utils.withGrid(1),
+                src: "images/characters/all/pokemon-fanatic-all.png",
+                behaviorLoop: [
+                    {type: "stand", direction: "down", time: 3000},
+                    
+                ],
+                talking: [
+                    {
+                        events: [
+                            { type: "textMessage", text: "Soy el sabio de las frases", faceHero: "npcB"},
+                            { type: "textMessage", text: "\"tarea no desplegada... D:\" - Pablo Tamayo González", faceHero: "npcB"},
+                            { type: "textMessage", text: "\" Error: \"innerText\" not defined\" - Simon Martínez García", faceHero: "npcB"},
+                            { type: "textMessage", text: `“gracias por tanto, perdón por tan poco 🙏🏽”  - Carlos Vargas Escobar`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“Bogotá es un estado mental”  - Martín Polo Santini`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“No sean como el man este del trabajo”  - Juan David Murillo`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“Yo y ChatGPT clutcheando Desarrollo a las 11 de la noche”  - Todos`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“muchas graxias afición, esta es para vosotros. SIUUUUUUU”  - Cristiano Ronaldo`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“Linux Tips: Always remove the french language pack: sudo rm -fr ./*”  - Kinnaird McQuade`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“muchas graxias afición, esta es para vosotros. SIUUUUUUU”  - Cristiano Ronaldo`, faceHero: "npcB"},
+                        ]
+                    }
+                ],
+
+            }),
         },
         walls: {
             //Límites del mapa
