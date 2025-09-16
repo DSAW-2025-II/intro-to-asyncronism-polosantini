@@ -72,28 +72,54 @@ class OverworldEvent {
     dictionary(resolve) {
 
         const diccionario = document.getElementById("diccionario");
+        diccionario.innerHTML = "";
 
         diccionario.style.display = "flex";
 
         if (this.event.typeName) {
-            this.cargarPokemons(this.event.typeName, diccionario);
+            this.cargarPokemones(this.event.typeName, diccionario);
         }
-
+        
         const cerrar = (e) => {
             if (e.key === "Enter" || e.key === "Escape") {
                 diccionario.style.display = "none";
                 document.removeEventListener("keydown", cerrar);
+                document.removeEventListener("keydown", scrollHandler);
                 resolve(); 
             }
         };
 
+        const scrollHandler = (e) => {
+            if (e.key === "ArrowDown") {
+            diccionario.scrollTop += 30; // baja 30px
+            } 
+            else if (e.key === "ArrowUp") {
+                diccionario.scrollTop -= 30; // sube 30px
+            }
+        };
+
+        document.querySelector(".dpad-abajo").addEventListener("click", () => {
+            diccionario.scrollTop += 45;
+        })
+
+        document.querySelector(".dpad-arriba").addEventListener("click", () => {
+            diccionario.scrollTop -= 45;
+        })
+
+        document.querySelector(".boton-b").addEventListener("click", () => {
+            diccionario.style.display = "none";
+            document.removeEventListener("keydown", cerrar);
+            resolve(); 
+        });
+
         document.addEventListener("keydown", cerrar);
+        document.addEventListener("keydown", scrollHandler);
     }
 
-    async cargarPokemons(typeName, container) {
+    async cargarPokemones(tipo, container) {
         try {
             container.innerHTML = "";
-            const respuesta = await fetch(`https://pokeapi.co/api/v2/type/${typeName}`);
+            const respuesta = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
             const datos = await respuesta.json();
 
             const pokemones = datos.pokemon;
@@ -120,13 +146,13 @@ class OverworldEvent {
                 const pokemon = document.createElement("div");
                 pokemon.innerHTML = `
                     <div class="pokemon">
-                        <div class="divisor-principal ${typeName}">
+                        <div class="divisor-principal ${tipo}">
                             <div class="divisor-superior">
                                 <div class="nombre-pokemon">
                                     <p>${pokemonDatos.name}</p>
                                 </div>
                                 <div class="tipo-pokemon">
-                                    <p>${typeName}</p>
+                                    <p>${tipo}</p>
                                 </div>
                             </div>
                             

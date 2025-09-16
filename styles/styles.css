@@ -1,28 +1,256 @@
-:root {
-    --border-color: #291D4D;
-    --dialog-background: #FFF3B4;
-
-    --menu-background: #FFE8D2;
-    --menu-border-color: #A48465;
-    --menu-font-color: #3A160D;    
-    --menu-selected-background: #7FC2FF;
-}
-
+/* =========================
+   FUENTES Y VARIABLES GLOBALES
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 
 * {
     box-sizing: border-box;
+    font-family: 'Pixelify Sans', monospace;
 }
 
 body {
-    background: #333;
+    background: red;
     padding: 0;
     margin: 0;
     overflow: hidden;
 }
 
+/*Diccionario y Tarjetas de los Pokemones*/
+
+.diccionario {
+    background: #FFE8D2;
+    z-index: 1000;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.pokemon {
+    border-radius: 10px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    width: 130px;
+    height: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}    
+
+.pokemon p {
+    font-size: 7px;
+}
+
+.divisor-principal {
+    width: 95%; height: 95%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 4px;
+    gap: 3px;
+}
+
+/* Divisor superior de la tarjeta y contenidos */
+.divisor-superior {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 4px;
+    margin-bottom: 2px;
+}
+
+.nombre-pokemon, .tipo-pokemon {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 1px 4px;
+    line-height: 1;
+    font-size: 70%;
+}
+
+.nombre-pokemon {
+    background-color: white;
+    border-radius: 3px;
+    padding-right: 23px;
+}
+
+.tipo-pokemon {
+    background: #eee;
+    border-radius: 3px;
+    padding: 2px 6px;
+}
+
+/* Divisor de la imagen y texto inferior */
+.divisor-imagen {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 35%; 
+    box-sizing: border-box;
+    margin-bottom: 2px;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 70%;
+    background: #e5e6e6;
+}
+
+.imagen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.divisor-rasgos {
+    background: white;
+    width: 100%;
+    display: flex;
+    font-size: 60%;
+    justify-content: space-around;
+}
+
+/* Divisor de los stats del Pokemon */
+.divisor-stats {
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 5px;
+    width: 95%;
+    padding: 3px;
+    font-size: 40%; 
+    line-height: 1;   
+    margin-top: 4px;
+    max-height: 30%;     
+}
+
+.divisor-stats table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    font-size: inherit; 
+}
+
+.divisor-stats td {
+    padding: 0px 2px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Colores de los Tipos de Pokemon */
+.normal { background: linear-gradient(135deg, #A8A878, #C6C6A7); color: #000; }
+.fire { background: linear-gradient(135deg, #F08030, #F5AC78); color: #000; }
+.water { background: linear-gradient(135deg, #6890F0, #9DB7F5); color: #000; }
+.grass { background: linear-gradient(135deg, #78C850, #A7DB8D); color: #000; }
+.electric { background: linear-gradient(135deg, #F8D030, #FAE078); color: #000; }
+.ice { background: linear-gradient(135deg, #98D8D8, #BCE6E6); color: #000; }
+.fighting { background: linear-gradient(135deg, #C03028, #D67873); color: #000; }
+.poison { background: linear-gradient(135deg, #A040A0, #C183C1); color: #000; }
+.ground { background: linear-gradient(135deg, #E0C068, #EBD69D); color: #000; }
+.flying { background: linear-gradient(135deg, #A890F0, #C6B7F5); color: #000; }
+.psychic { background: linear-gradient(135deg, #F85888, #FA92B2); color: #000; }
+.bug { background: linear-gradient(135deg, #A8B820, #C6D16E); color: #000; }
+.rock { background: linear-gradient(135deg, #B8A038, #D1C17D); color: #000; }
+.ghost { background: linear-gradient(135deg, #705898, #A292BC); color: #000; }
+.dark { background: linear-gradient(135deg, #705848, #A29288); color: #000; }
+.dragon { background: linear-gradient(135deg, #7038F8, #A27DFA); color: #000; }
+.steel { background: linear-gradient(135deg, #B8B8D0, #D1D1E0); color: #000; }
+.fairy { background: linear-gradient(135deg, #EE99AC, #F4BDC9); color: #000; }
+
+/*Transiciones entre mapas*/
+.SceneTransition {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: white;
+    opacity: 0;
+    animation: scene-transition-fade-in 0.5s forwards;
+}
+
+.SceneTransition.fade-out {
+    animation: scene-transition-fade-out 0.5s forwards;
+}
+
+@keyframes scene-transition-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scene-transition-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/*D-Pad e interacción entre los Botones*/
+.dpad button, .botones-interaccion button {
+    background: black;
+    color: white;
+}
+
+/* Contenedor Principal */
+.container-principal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+/* D-Pad */
+.dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botones-medio {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.dpad-centro { width: 30px; height: 30px; }
+.dpad-izquierda, .dpad-derecha { width: 50px; height: 30px; }
+.dpad-arriba, .dpad-abajo { height: 50px; width: 30px; }
+
+.dpad button {
+    border: 1px solid #000;
+    margin: 0;
+    background: #3a3a3a;
+    transition: transform 0.1s, background 0.1s;
+}
+
+.dpad button:active {
+    background: #908e8e;
+    transform: scale(0.95);
+}
+
+/* Contenedor del juego */
 .game-container {
-    /*Definiendo la posición y el tamaño del "marco" del juego*/
     position: relative;
     width: 352px;
     height: 198px;
@@ -35,4 +263,75 @@ body {
 
 .game-container canvas {
     image-rendering: pixelated;
+}
+
+/* Botones A y B para interactuar */
+.botones-interaccion {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    
+}
+
+.botones-interaccion button {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin: 0;
+    background: #3a3a3a;
+    transition: transform 0.1s, background 0.1s;
+}
+
+.botones-interaccion button:active {
+    background: #908e8e;
+    transform: scale(0.95);
+}
+
+/*TextMessage*/
+.TextMessage {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    border-radius: 15px;
+    height: 36px;
+    font-size: 12px;
+    padding: 4px;
+    background: white;
+    z-index: 999;
+}
+
+.TextMessage_p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.TextMessage span { opacity: 0; }
+.TextMessage span.revealed { opacity: 1; }
+
+.TextMessage_button {
+    margin: 0;
+    font-size: 8px;
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+
+    animation: bounce 1s infinite;
+}
+
+/*Animación para el botón de TextMessage*/
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
 }

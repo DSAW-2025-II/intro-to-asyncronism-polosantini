@@ -385,64 +385,19 @@ window.OverworldMaps = {
         }
     },
 
-    MapaAll: {
-        lowerSrc: "images/maps/all/map-fanatic-all.png",
-        gameObjects: {
-            ash: new Person({
-                isPlayerControlled: true,
-                x: utils.withGrid(2),
-                y: utils.withGrid(8),
-            }),
-            fanaticAll : new Person({
-                isPlayerControlled: false,
-                x: utils.withGrid(2),
-                y: utils.withGrid(2),
-                src: "images/characters/all/pokemon-fanatic-all.png"
-            })
-        },
-        walls: {
-            [utils.asGridCoord(0,0)]: true,
-            [utils.asGridCoord(1,0)]: true,
-            [utils.asGridCoord(2,0)]: true,
-            [utils.asGridCoord(3,0)]: true,
-            [utils.asGridCoord(4,0)]: true,
-
-            [utils.asGridCoord(0,0)]: true,
-            [utils.asGridCoord(0,1)]: true,
-            [utils.asGridCoord(0,2)]: true,
-            [utils.asGridCoord(0,3)]: true,
-            [utils.asGridCoord(0,4)]: true,
-            [utils.asGridCoord(0,5)]: true,
-            [utils.asGridCoord(0,6)]: true,
-            [utils.asGridCoord(0,7)]: true,
-            [utils.asGridCoord(0,8)]: true,
-            [utils.asGridCoord(0,9)]: true,
-            [utils.asGridCoord(1,10)]: true,
-
-            [utils.asGridCoord(4,0)]: true,
-            [utils.asGridCoord(4,1)]: true,
-            [utils.asGridCoord(4,2)]: true,
-            [utils.asGridCoord(4,3)]: true,
-            [utils.asGridCoord(4,4)]: true,
-            [utils.asGridCoord(4,5)]: true,
-            [utils.asGridCoord(4,6)]: true,
-            [utils.asGridCoord(4,7)]: true,
-            [utils.asGridCoord(4,8)]: true,
-            [utils.asGridCoord(4,9)]: true,
-            [utils.asGridCoord(3,10)]: true,
-
-            [utils.asGridCoord(2,11)]: true,
-        },
-        cutsceneSpaces: {
-            [utils.asGridCoord(2,10)]: [
-                {
-                    events: [
-                        { type: "changeMap", map: "MapaPrincipal"}
-                    ]
-                }
-            ]
-        }
-    },
+    MapaAll: createMap("all", [
+        { type: "textMessage", text: "Cuando caminas por un pad entras a un mapa como este, como te habrás dado cuenta hay muchos en el mapa", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Para salir de estos mapas camina hacia la parte inferior, y serás transportado a la isla principal", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Cada uno tiene un símbolo (o un intento de símbolo) del tipo de Pokemon del que se quiere conocer", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Perdona al artista que los diseñó, no tiene la vena del diseño", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Cada tipo de Pokemon tiene un fanático (extremo) a ese tipo, ten cuidado con ellos", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Ellos te mostrarán una ventana con los Pokemones de su tipo", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Puedes hacer scroll dentro del diccionario de cada uno con los botones superior e inferior del D-Pad", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "O con las flechitas de arriba y abajo o el mouse, si te resulta más cómodo", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Para salir de ese diccionario utiliza el botón B a la derecha de este canvas, o Enter o Esc en tu teclado", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Queda mejor que descubras casi todo por tu cuenta", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Buena suerte", faceHero: `fanaticAll` },
+    ]),
 
     MapaFighting: createMap("fighting", [
         { type: "textMessage", text: "¿Quién rayos eres y porque has venido acá?", faceHero: `fanaticFighting` },

@@ -19,20 +19,53 @@ class DirectionInput {
     }
     
     init() {
+
         document.addEventListener("keydown", e => {
             const dir = this.map[e.code];
             if (dir && this.heldDirections.indexOf(dir) === -1) {
                 this.heldDirections.unshift(dir);
-                console.log(this.heldDirections);
             }
         });
+
         document.addEventListener("keyup", e => {
             const dir = this.map[e.code];
             const index = this.heldDirections.indexOf(dir);
             if (index > -1) {
                 this.heldDirections.splice(index, 1);
             }
-        })
+        });
+
+        document.querySelectorAll(".dpad button").forEach(button => {
+            const dir = button.dataset.direction;
+
+            button.addEventListener("mousedown", () => {
+                if (this.heldDirections.indexOf(dir) === -1) {
+                    this.heldDirections.unshift(dir);
+                }
+            });
+            button.addEventListener("mouseup", () => {
+                const index = this.heldDirections.indexOf(dir);
+                if (index > -1) {
+                    this.heldDirections.splice(index, 1);
+                }
+            });
+
+
+            button.addEventListener("touchstart", (e) => {
+                e.preventDefault();
+                if (this.heldDirections.indexOf(dir) === -1) {
+                    this.heldDirections.unshift(dir);
+                }
+            });
+            button.addEventListener("touchend", (e) => {
+                e.preventDefault();
+                const index = this.heldDirections.indexOf(dir);
+                if (index > -1) {
+                    this.heldDirections.splice(index, 1);
+                }
+            });
+
+        });
         
     }
 }

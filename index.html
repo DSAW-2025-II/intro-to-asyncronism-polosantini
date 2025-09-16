@@ -5,19 +5,45 @@
     <head>
         <title>Pokédex</title>
         <link href="styles/styles.css" type="text/css" rel="stylesheet">
-        <link href="styles/TextMessage.css" type="text/css" rel="stylesheet">
-        <link href="styles/SceneTransition.css" type="text/css" rel="stylesheet">
-        <link href="styles/Diccionario.css" type="text/css" rel="stylesheet">
     </head>
 
     <body>
-        <div class="game-container">
-            
-            <canvas class="game-canvas" width="352" height="198"></canvas>
 
-            <div class="diccionario" id="diccionario"></div>
+        <div class="container-principal">
+
+            <div class="dpad">
+
+                <button class="dpad-arriba" data-direction="up">|</button>
+                    
+                <div class="botones-medio">
+                    <button class="dpad-izquierda" data-direction="left">---</button>
+                    <button class="dpad-centro"></button>
+                    <button class="dpad-derecha" data-direction="right">---</button>
+                </div>
+
+                <button class="dpad-abajo" data-direction="down">|</button>
+
+            </div>
+
+            <div class="game-container">
+                <div class="pantalla-juego">
+                    <canvas class="game-canvas" width="352" height="198"></canvas>
+
+                    <div class="diccionario" id="diccionario"></div>
+                </div>
+            </div>
+
+            <div class="botones-interaccion">
+
+                <button class="boton-a">A</button>
+
+                <button class="boton-b">B</button>
+
+            </div>
 
         </div>
+
+        
 
     </div>
         <!-- Scripts de JS-->

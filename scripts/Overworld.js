@@ -42,6 +42,10 @@ class Overworld {
         new KeypressListener("Enter", () => {
             this.map.checkForActionCutscene();
         })
+
+        document.querySelector(".boton-a").addEventListener("click", () => {
+            this.map.checkForActionCutscene();
+        })
     }
 
     bindAshPositionCheck() {
@@ -80,16 +84,14 @@ class Overworld {
             {who: "npcA", type: "walk", direction: "left"},
             {who: "npcA", type: "walk", direction: "left"},
             {who: "npcA", type: "walk", direction: "left"},
-            {type: "textMessage", text: "Bienvenido a esta Pokédex"},
+            {type: "textMessage", text: "Bienvenido a esta Pokédex, oprime el botón A o Enter para continuar"},
             {type: "textMessage", text: "No te molestes en saber mi nombre, los nombres son solo para amigos", faceHero: "npcA"},
-            {type: "textMessage", text: "Dentro de este mapa principal encontrarás varios portales", faceHero: "npcA"},
-            {type: "textMessage", text: "Cada uno se refiere a un tipo de Pokémon diferente", faceHero: "npcA"},
-            {type: "textMessage", text: "Dentro de cada uno te transportarás a un mapa diferente", faceHero: "npcA"},
-            {type: "textMessage", text: "En cada mapa encontrarás un fanático de ese tipo de Pokémon", faceHero: "npcA"},
-            {type: "textMessage", text: "Ellos te enseñarán sobre ese tipo", faceHero: "npcA"},
-            {type: "textMessage", text: "Si quieres salir de ese mapa, dirígete hacia el punto inferior del mismo", faceHero: "npcA"},
-            {type: "textMessage", text: "Volverás acá"},
-            {type: "textMessage", text: "Ten cuidado", faceHero: "npcA"},
+            {type: "textMessage", text: "Veo que eres alguien nuevo", faceHero: "npcA"},
+            {type: "textMessage", text: "Para moverte utiliza el D-Pad a la izquierda de este canvas", faceHero: "npcA"},
+            {type: "textMessage", text: "O simplemente las teclas WASD o las flechas en tu teclado", faceHero: "npcA"},
+            {type: "textMessage", text: "Para interactuar con alguien oprime Enter o el botón A", faceHero: "npcA"},
+            {type: "textMessage", text: "A la derecha del mapa hay un pad con un intento de diseñar el cuantificador universal ", faceHero: "npcA"},
+            {type: "textMessage", text: "Nos vemos ahí", faceHero: "npcA"},
             {who: "npcA", type: "stand", direction: "left", time: 800},
         ])
 
