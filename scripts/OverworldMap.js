@@ -131,6 +131,7 @@ window.OverworldMaps = {
                             { type: "textMessage", text: `“Linux Tips: Always remove the french language pack: sudo rm -fr ./*”  - Kinnaird McQuade`, faceHero: "npcB"},
                             { type: "textMessage", text: `“muchas graxias afición, esta es para vosotros. SIUUUUUUU”  - Cristiano Ronaldo`, faceHero: "npcB"},
                             { type: "textMessage", text: `“vaporeon”  - Pablo Tamayo González`, faceHero: "npcB"},
+                            { type: "textMessage", text: `“ey pablo te quedó tremenda”  - Carlos Vargas Escobar`, faceHero: "npcB"},
                         ]
                     }
                 ],
