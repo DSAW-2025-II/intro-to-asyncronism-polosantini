@@ -99,11 +99,11 @@ class OverworldEvent {
         };
 
         document.querySelector(".dpad-abajo").addEventListener("click", () => {
-            diccionario.scrollTop += 45;
+            diccionario.scrollTop += window.CONFIG.SCROLL_SPEED || 45;
         })
 
         document.querySelector(".dpad-arriba").addEventListener("click", () => {
-            diccionario.scrollTop -= 45;
+            diccionario.scrollTop -= window.CONFIG.SCROLL_SPEED || 45;
         })
 
         document.querySelector(".boton-b").addEventListener("click", () => {
@@ -119,7 +119,9 @@ class OverworldEvent {
     async cargarPokemones(tipo, container) {
         try {
             container.innerHTML = "";
-            const respuesta = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
+            const POKEMON_URL = window.CONFIG.POKEMON_URL;
+
+            const respuesta = await fetch(`${POKEMON_URL}/type/${tipo}`);
             const datos = await respuesta.json();
 
             const pokemones = datos.pokemon;
