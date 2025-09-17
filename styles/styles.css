@@ -1,15 +1,14 @@
-/* =========================
-   FUENTES Y VARIABLES GLOBALES
-========================= */
+/*IMPORTACIÓN DE LAS FUENTES GLOBALES*/
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
-
+/*Definición de la fuente global*/
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /*para incluir el padding y el border en width y height*/
     font-family: 'Pixelify Sans', monospace;
 }
 
+/*Poniendo el Body de rojo y eliminando el scroll, además se añade el padding para poner un poquito más de separación entre los botones (incluso si es 0, no entendí porque jajaja)*/
 body {
     background: red;
     padding: 0;
@@ -35,8 +34,10 @@ body {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
+
 }
 
+/*Estilización de la tarjeta de Pokemón*/
 .pokemon {
     border-radius: 10px;
     text-transform: uppercase;
@@ -61,6 +62,7 @@ body {
     font-size: 7px;
 }
 
+/*Estilización del divisor principal*/
 .divisor-principal {
     width: 95%; height: 95%;
     border-radius: 5px;
@@ -103,7 +105,7 @@ body {
     padding: 2px 6px;
 }
 
-/* Divisor de la imagen y texto inferior */
+/* Divisor de la imagen y texto inferior (rasgos) */
 .divisor-imagen {
     flex: 0 0 auto;
     display: flex;
@@ -115,6 +117,7 @@ body {
     box-sizing: border-box;
     margin-bottom: 2px;
 }
+
 
 .imagen {
     display: flex;
@@ -151,6 +154,7 @@ body {
     max-height: 30%;     
 }
 
+/*Estilización de la tabla de stats*/
 .divisor-stats table {
     width: 100%;
     height: auto;
@@ -163,7 +167,7 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-/* Colores de los Tipos de Pokemon */
+/* Colores de los Tipos de Pokemon para las tarjetas*/
 .normal { background: linear-gradient(135deg, #A8A878, #C6C6A7); color: #000; }
 .fire { background: linear-gradient(135deg, #F08030, #F5AC78); color: #000; }
 .water { background: linear-gradient(135deg, #6890F0, #9DB7F5); color: #000; }
@@ -183,7 +187,7 @@ body {
 .steel { background: linear-gradient(135deg, #B8B8D0, #D1D1E0); color: #000; }
 .fairy { background: linear-gradient(135deg, #EE99AC, #F4BDC9); color: #000; }
 
-/*Transiciones entre mapas*/
+/*Transiciones entre mapas (Esto estaba en la serie de Drew Conley) */
 .SceneTransition {
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
@@ -225,19 +229,33 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 9999 !important
 }
 
+/*Contenedor de los botones de la izquierda, medio (botón inutil) y derecha del D-Pad*/
 .botones-medio {
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-.dpad-centro { width: 30px; height: 30px; }
-.dpad-izquierda, .dpad-derecha { width: 50px; height: 30px; }
-.dpad-arriba, .dpad-abajo { height: 50px; width: 30px; }
+/*Dimensiones de los botones del D-Pad para que parezcan un D-Pad*/
+.dpad-centro { 
+    width: 30px; height: 30px; 
+}
+.dpad-izquierda, .dpad-derecha { 
+    width: 50px; height: 30px; 
+}
+.dpad-arriba, .dpad-abajo { 
+    height: 50px; width: 30px; 
+}
 
+/*Estilización de lo botones del D-Pad*/
 .dpad button {
+    position: relative;
+    z-index: 2000;       
+    touch-action: none; 
     border: 1px solid #000;
     margin: 0;
     background: #3a3a3a;
@@ -259,6 +277,7 @@ body {
     outline: 1px solid white;
     background-color: rgb(31,215,255);
     transform: scale(3) translateY(50%);
+    z-index: 1;
 }
 
 .game-container canvas {
@@ -337,7 +356,67 @@ body {
     }
 }
 
+/*TextInput*/
+.TextInput {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    border-radius: 15px;
+    height: auto;
+    min-height: 36px;
+    font-size: 12px;
+    padding: 4px;
+    background: white;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.TextInput_p {
+    margin: 0;
+    font-size: 12px;
+    padding: 2px 0;
+}
+
+.TextInput_field {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-family: inherit;
+    background: #f8f8f8;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+}
+
+.TextInput_field:focus {
+    outline: none;
+    border-color: #888;
+    background: #fff;
+}
+
+.TextInput_button {
+    margin: 0;
+    font-size: 8px;
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+    animation: bounce 1s infinite;
+}
+
+
+/*Media queries para tratar de hacerlo responsive*/
+
+/*Para cuando la orientación del dispositivo es vertical*/
 @media (orientation: portrait) {
+
+    /*Se cambia la distribución del container principal para que el canvas esté por encima de los botones*/
     .container-principal {
         flex-direction: column; 
         align-items: center;
@@ -345,34 +424,36 @@ body {
         align-items: center;   
         
     }
-
+     /*Se reasignan los órdenes de los elementos dentro del flex y se escalan más grandes para dispositivos móviles*/
     .game-container {
         order: 1; 
         margin-bottom: 10%;
-        transform: scale(2.5) translateY(50%);
+        transform: scale(2.7) translateY(50%);
     }
 
     .dpad {
         order: 2; 
-        margin-top: calc(198px * 5 / 2);
+        margin-top: 50%;  /*Se baja el margin para que aparezca por debajo o muy pegado al canvas*/
         margin-bottom: 5%;
-        transform: scale(2);
+        transform: scale(2.3);
     }
 
+    /*Se cambia la orientación de los botones de interacción y se escalan*/
     .botones-interaccion {
         order: 3; 
         flex-direction: row; 
         gap: 60px;
-        transform: scale(2) translateY(200%);
+        transform: scale(2.3) translateY(150%);
     }
 }
 
+/*Para cuando la orientación del dispositivo es horizontal*/
 @media (orientation: landscape) and (min-width: 1330px){
+    /*Acá es basicamente lo mismo que en portrait pero en dirección row, además se escalan para que ocupe más espacio*/
     .container-principal {
         flex-direction: row; 
         align-items: center;
         justify-content: center;
-        align-items: center;   
         width: 100%;
         height: 100vh;
         padding: 5%;
@@ -380,22 +461,32 @@ body {
         gap: 2%;
     }
 
+    
     .game-container {
-        flex: 0 0 auto; 
-        transform: scale(2.5);
-        display: flex;
+        flex: 0 0 auto; /*Flex grow, shrink y basis para calcular los tamaño base según el viewport*/
+        transform: scale(2.5) translateY(0);
+        display: flex; /*Flex y justify y align para ubicar el canvas más facilmente dentro de los border*/
         justify-content: center;
         align-items: center;
     }
 
+    .game-container canvas {
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /*Convierte el canvas en block para que se le pueda aplicar margin*/
+        margin: 0 auto;  /*Centra el canvas de forma horizontal, si este tiene un tamaño menor al contenedor*/
+    }
+    
     .dpad {
-        flex: 0 0 auto;
-        transform: scale(2);
+        flex: 0 0 auto; /*Flex grow, shrink y basis para calcular los tamaño base según el viewport*/
+        transform: scale(2); 
+        /*Organizar los botones del D-Pad y su centrado dentro de su propio container*/
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    /*La inversa que en portrait, se organiza en column en vez de row*/
     .botones-interaccion {
         flex: 0 0 auto; 
         flex-direction: column; 
@@ -403,5 +494,26 @@ body {
         justify-content: center;
         align-items: center;
         transform: scale(2);
+    }
+}
+
+/*La misma que la anterior pero escalado a más pixeles*/
+@media (orientation: landscape) and (max-width: 1329px) {
+    .container-principal {
+        gap: 15px;
+        padding: 10px;
+        transform: translateY(50%);
+    }
+
+    .game-container {
+        transform: scale(2) translateY(0);
+    }
+
+    .dpad {
+        transform: scale(1.2);
+    }
+
+    .botones-interaccion {
+        transform: scale(1.2);
     }
 }

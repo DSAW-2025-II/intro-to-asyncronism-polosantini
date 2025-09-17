@@ -81,6 +81,7 @@ class OverworldMap {
     }
 }
 
+//Creación y estilización de los mapas
 window.OverworldMaps = {
 
     MapaPrincipal: {
@@ -102,8 +103,8 @@ window.OverworldMaps = {
                 talking: [
                     {
                         events: [
-                            { type: "textMessage", text: "Ya te dije todo lo que necesitas saber", faceHero: "npcA"}, //REVISAR EL FACE HERO, VIDEO RPG 9 MIN 28:39
                             { type: "textMessage", text: "No joda mani", faceHero: "npcA"},
+                            { type: "textInput", text: "Escribe el nombre o el ID del Pokemon que deseas buscar"},
                         ]
                     }
                 ],
@@ -224,21 +225,6 @@ window.OverworldMaps = {
             [utils.asGridCoord(9,7)]: true,
         },
         cutsceneSpaces: {
-            [utils.asGridCoord(4,8)]: [
-                {
-                    events: [
-                        { who: "npcA", type: "walk", direction: "right"},
-                        { who: "npcA", type: "walk", direction: "down"},
-                        { who: "npcA", type: "stand", direction: "left", time: 500},
-                        { type: "textMessage", text: "Vete de mi vista"},
-                        { who: "npcA", type: "walk", direction: "up"},
-                        { who: "npcA", type: "walk", direction: "left"},
-
-                        { who: "ash", type: "walk", direction: "right"},
-                        { who: "ash", type: "walk", direction: "up"},
-                    ]
-                }
-            ],
 
             //Mapa All
             [utils.asGridCoord(23,5)]: [
@@ -421,9 +407,11 @@ window.OverworldMaps = {
         { type: "textMessage", text: "Cada tipo de Pokemon tiene un fanático (extremo) a ese tipo, ten cuidado con ellos", faceHero: `fanaticAll` },
         { type: "textMessage", text: "Ellos te mostrarán una ventana con los Pokemones de su tipo", faceHero: `fanaticAll` },
         { type: "textMessage", text: "Puedes hacer scroll dentro del diccionario de cada uno con los botones superior e inferior del D-Pad", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "(Aunque solo tiene soporte para eso en PC, en dispositivos móviles toca scrollear con el dedo :p)", faceHero: `fanaticAll` },
         { type: "textMessage", text: "O con las flechitas de arriba y abajo o el mouse, si te resulta más cómodo", faceHero: `fanaticAll` },
         { type: "textMessage", text: "Para salir de ese diccionario utiliza el botón B a la derecha de este canvas, o Enter o Esc en tu teclado", faceHero: `fanaticAll` },
         { type: "textMessage", text: "Queda mejor que descubras casi todo por tu cuenta", faceHero: `fanaticAll` },
+        { type: "textMessage", text: "Ah, y adicional, en la parte inferior izquierda del mapa principal me puedes consultar sobre cualquier Pokemon", faceHero: `fanaticAll` },
         { type: "textMessage", text: "Buena suerte", faceHero: `fanaticAll` },
     ]),
 

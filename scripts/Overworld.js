@@ -74,7 +74,7 @@ class Overworld {
 
         this.startGameLoop();
 
-    
+        //Cutscene de inicio del juego
         this.map.startCutscene([
             {who: "ash", type: "walk", direction: "down"},
             {who: "ash", type: "walk", direction: "down"},
@@ -84,10 +84,10 @@ class Overworld {
             {who: "npcA", type: "walk", direction: "left"},
             {who: "npcA", type: "walk", direction: "left"},
             {who: "npcA", type: "walk", direction: "left"},
-            {type: "textMessage", text: "Bienvenido a esta Pokédex, oprime el botón A o Enter para continuar"},
+            {type: "textMessage", text: "Bienvenido a esta Pokédex, oprime el botón A o Enter para continuar en un diálogo"},
             {type: "textMessage", text: "No te molestes en saber mi nombre, los nombres son solo para amigos", faceHero: "npcA"},
             {type: "textMessage", text: "Veo que eres alguien nuevo", faceHero: "npcA"},
-            {type: "textMessage", text: "Para moverte utiliza el D-Pad a la izquierda de este canvas", faceHero: "npcA"},
+            {type: "textMessage", text: "Para moverte utiliza el D-Pad (botones en cruz) que están en la página", faceHero: "npcA"},
             {type: "textMessage", text: "O simplemente las teclas WASD o las flechas en tu teclado", faceHero: "npcA"},
             {type: "textMessage", text: "Para interactuar con alguien oprime Enter o el botón A", faceHero: "npcA"},
             {type: "textMessage", text: "A la derecha del mapa hay un pad con un intento de diseñar el cuantificador universal ", faceHero: "npcA"},
