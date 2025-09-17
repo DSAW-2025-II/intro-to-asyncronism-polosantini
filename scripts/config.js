@@ -17,3 +17,5 @@ if (typeof window !== 'undefined') { //Comprueba si existe window (Para ver si e
 }
 
 //En resumen, verifica si uno está en navegador o en Node.js, y modifica como se guarda o exporta config
+
+document.getElementById("titulo").textContent = config.NOMBRE_APP;
