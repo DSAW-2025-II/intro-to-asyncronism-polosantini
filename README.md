@@ -32,9 +32,11 @@ Estos fragmentos tienen comentarios míos, para que facilite su evaluación.
 - El diseño, podría con más paciencia hacer un diseño más chévere y meterle a los VFX y SFX.
 
 
-## Introducción al Asíncronismo
+## Introducción al Asíncronismo (Despliegue ↴)
 
 [Vercel](https://intro-to-asyncronism-polosantini.vercel.app/)
+
+[GitHub Pages](https://dsaw-2025-ii.github.io/intro-to-asyncronism-polosantini/)
 
 ## Funcionalidades
 
