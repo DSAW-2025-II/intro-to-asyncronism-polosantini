@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <!-- Título de la página, y link con styles y config para las variables de entorno-->
+        <title id="titulo"></title>
+        <link href="styles/styles.css" type="text/css" rel="stylesheet">
+
+        <script src="scripts/config.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Contenedor de todo el contenido (Duh)-->
+        <div class="container-principal">
+
+            <!-- Contenedor que almacena el D-Pad-->
+            <div class="dpad">
+
+                <button class="dpad-arriba" data-direction="up">|</button>
+                
+                <!-- Contenedor de los botones del medio del D-Pad para organizarlos en fila-->
+                <div class="botones-medio">
+                    <button class="dpad-izquierda" data-direction="left">---</button>
+                    <button class="dpad-centro"></button>
+                    <button class="dpad-derecha" data-direction="right">---</button>
+                </div>
+
+                <button class="dpad-abajo" data-direction="down">|</button>
+
+            </div>
+
+            <!-- Contenedor del canvas-->
+            <div class="game-container">
+
+                <div class="pantalla-juego">
+                    <canvas class="game-canvas" width="352" height="198"></canvas>
+
+                    <!-- Divisor clase diccionario (En este se agregan las tarjetas de los Pokemon para mostrar su información), esta está por encima del canvas (modificado en CSS para eso)-->
+                    <div class="diccionario" id="diccionario"></div>
+                </div>
+                
+            </div>
+
+            <!-- Contenedor de los botones A y B-->
+            <div class="botones-interaccion">
+
+                <button class="boton-a">A</button>
+
+                <button class="boton-b">B</button>
+
+            </div>
+
+        </div>
+
+        
+
+    </div>
+        <!-- Scripts de JS-->
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/KeypressListener.js"></script>
+        <script src="scripts/DirectionInput.js"></script>
+        <script src="scripts/GameObject.js"></script>
+        <script src="scripts/Person.js"></script>
+        <script src="scripts/Sprite.js"></script>
+        <script src="scripts/TextMessage.js"></script>
+        <script src="scripts/TextInput.js"></script>
+        <script src="scripts/OverworldEvent.js"></script>
+        <script src="scripts/OverworldMap.js"></script>
+        <script src="scripts/Overworld.js"></script>
+        <script src="scripts/RevealingText.js"></script>
+        <script src="scripts/SceneTransition.js"></script>
+        <script src="scripts/init.js"></script>
+    </body>
+
+</html>
+
